@@ -70,7 +70,7 @@ def test_indicative_future():
         "él": "amará",
         "ella": "amará",
         "nosotros": "amaremos",
-        "nosotras": "amaréis",
+        "nosotras": "amaremos",
         "vosotros": "amaréis",
         "vosotras": "amaréis",
         "ustedes": "amarán",
