@@ -3,8 +3,8 @@ from exprimidora.verb import Verb
 
 class IrregularToBe(Verb):
     def __init__(self):
-        self.infinitive = "ser"
         self.to_have = IrregularToHave()
+        self.infinitive = "ser"
 
     def gerund(self) -> str:
         return "siendo"

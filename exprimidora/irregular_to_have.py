@@ -2,8 +2,8 @@ from exprimidora.verb import Verb
 
 class IrregularToHave(Verb):
     def __init__(self):
-        self.infinitive = "haber"
         self.to_have = self
+        self.infinitive = "haber"
 
     def gerund(self) -> str:
         return "habiendo"
