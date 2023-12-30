@@ -1,6 +1,6 @@
 # Exprimidora
 
-> Me llamo `exprimidora` porque **conjugo**.
+> Me llamo `exprimidora` porque **con·jugo**.
 
 ## Introducción
 

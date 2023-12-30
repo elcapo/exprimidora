@@ -1,2 +1,3 @@
 from exprimidora.irregular_to_have import IrregularToHave
 from exprimidora.regular_first_group import RegularFirstGroup
+from exprimidora.regular_second_group import RegularSecondGroup

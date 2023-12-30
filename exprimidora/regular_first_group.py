@@ -224,24 +224,24 @@ class RegularFirstGroup:
 
     def imperative_affirmative(self) -> dict:
         return {
-            "tú": "ama",
-            "vos": "amá",
-            "usted": "ame",
-            "nosotros": "amemos",
-            "nosotras": "amemos",
-            "vosotros": "amad",
-            "vosotras": "amad",
-            "ustedes": "amen",
+            "tú": self.suffixed("a"),
+            "vos": self.suffixed("á"),
+            "usted": self.suffixed("e"),
+            "nosotros": self.suffixed("emos"),
+            "nosotras": self.suffixed("emos"),
+            "vosotros": self.suffixed("ad"),
+            "vosotras": self.suffixed("ad"),
+            "ustedes": self.suffixed("en"),
         }
 
     def imperative_negative(self) -> dict:
         return {
-            "tú": "ames",
-            "vos": "amés",
-            "usted": "ame",
-            "nosotros": "amemos",
-            "nosotras": "amemos",
-            "vosotros": "améis",
-            "vosotras": "améis",
-            "ustedes": "amen",
+            "tú": self.suffixed("es"),
+            "vos": self.suffixed("és"),
+            "usted": self.suffixed("e"),
+            "nosotros": self.suffixed("emos"),
+            "nosotras": self.suffixed("emos"),
+            "vosotros": self.suffixed("éis"),
+            "vosotras": self.suffixed("éis"),
+            "ustedes": self.suffixed("en"),
         }
