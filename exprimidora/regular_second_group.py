@@ -1,4 +1,6 @@
-from exprimidora import IrregularToHave
+from exprimidora.irregular_to_have import IrregularToHave
+from exprimidora.personal_conjugation import PersonalConjugation
+from exprimidora.imperative_conjugation import ImperativeConjugation
 
 class RegularSecondGroup:
     def __init__(self, infinitive: str):
@@ -8,6 +10,8 @@ class RegularSecondGroup:
             raise Exception("Invalid regular verb of the second group as it does not terminate in: -er")
         self.infinitive = infinitive
         self.to_have = IrregularToHave()
+        self.personal_conjugation = PersonalConjugation(self.suffixed)
+        self.imperative_conjugation = ImperativeConjugation(self.suffixed)
     
     def root(self) -> str:
         return self.infinitive[:-2]
@@ -22,89 +26,19 @@ class RegularSecondGroup:
         return self.suffixed("ido")
 
     def indicative_present(self) -> dict:
-        return {
-            "yo": self.suffixed("o"),
-            "tú": self.suffixed("es"),
-            "vos": self.suffixed("és"),
-            "usted": self.suffixed("e"),
-            "él": self.suffixed("e"),
-            "ella": self.suffixed("e"),
-            "nosotros": self.suffixed("emos"),
-            "nosotras": self.suffixed("emos"),
-            "vosotros": self.suffixed("éis"),
-            "vosotras": self.suffixed("éis"),
-            "ustedes": self.suffixed("en"),
-            "ellos": self.suffixed("en"),
-            "ellas": self.suffixed("en"),
-        }
+        return self.personal_conjugation.conjugate(["o", "es", "és", "e", "emos", "éis", "en"])
 
     def indicative_imperfect(self) -> dict:
-        return {
-            "yo": self.suffixed("ía"),
-            "tú": self.suffixed("ías"),
-            "vos": self.suffixed("ías"),
-            "usted": self.suffixed("ía"),
-            "él": self.suffixed("ía"),
-            "ella": self.suffixed("ía"),
-            "nosotros": self.suffixed("íamos"),
-            "nosotras": self.suffixed("íamos"),
-            "vosotros": self.suffixed("íais"),
-            "vosotras": self.suffixed("íais"),
-            "ustedes": self.suffixed("ían"),
-            "ellos": self.suffixed("ían"),
-            "ellas": self.suffixed("ían"),
-        }
+        return self.personal_conjugation.conjugate(["ía", "ías", "ías", "ía", "íamos", "íais", "ían"])
 
     def indicative_preterite(self) -> dict:
-        return {
-            "yo": self.suffixed("í"),
-            "tú": self.suffixed("iste"),
-            "vos": self.suffixed("iste"),
-            "usted": self.suffixed("ió"),
-            "él": self.suffixed("ió"),
-            "ella": self.suffixed("ió"),
-            "nosotros": self.suffixed("imos"),
-            "nosotras": self.suffixed("imos"),
-            "vosotros": self.suffixed("isteis"),
-            "vosotras": self.suffixed("isteis"),
-            "ustedes": self.suffixed("ieron"),
-            "ellos": self.suffixed("ieron"),
-            "ellas": self.suffixed("ieron"),
-        }
+        return self.personal_conjugation.conjugate(["í", "iste", "iste", "ió", "imos", "isteis", "ieron"])
 
     def indicative_future(self) -> dict:
-        return {
-            "yo": self.suffixed("eré"),
-            "tú": self.suffixed("erás"),
-            "vos": self.suffixed("erás"),
-            "usted": self.suffixed("erá"),
-            "él": self.suffixed("erá"),
-            "ella": self.suffixed("erá"),
-            "nosotros": self.suffixed("eremos"),
-            "nosotras": self.suffixed("eréis"),
-            "vosotros": self.suffixed("eréis"),
-            "vosotras": self.suffixed("eréis"),
-            "ustedes": self.suffixed("erán"),
-            "ellos": self.suffixed("erán"),
-            "ellas": self.suffixed("erán"),
-        }
+        return self.personal_conjugation.conjugate(["eré", "erás", "erás", "erá", "eremos", "eréis", "erán"])
 
     def indicative_conditional(self) -> dict:
-        return {
-            "yo": self.suffixed("ería"),
-            "tú": self.suffixed("erías"),
-            "vos": self.suffixed("erías"),
-            "usted": self.suffixed("ería"),
-            "él": self.suffixed("ería"),
-            "ella": self.suffixed("ería"),
-            "nosotros": self.suffixed("eríamos"),
-            "nosotras": self.suffixed("eríamos"),
-            "vosotros": self.suffixed("eríais"),
-            "vosotras": self.suffixed("eríais"),
-            "ustedes": self.suffixed("erían"),
-            "ellos": self.suffixed("erían"),
-            "ellas": self.suffixed("erían"),
-        }
+        return self.personal_conjugation.conjugate(["ería", "erías", "erías", "ería", "eríamos", "eríais", "erían"])
 
     def indicative_present_perfect(self) -> dict:
         return {
@@ -137,72 +71,16 @@ class RegularSecondGroup:
         }
 
     def subjunctive_present(self) -> dict:
-        return {
-            "yo": self.suffixed("a"),
-            "tú": self.suffixed("as"),
-            "vos": self.suffixed("ás"),
-            "usted": self.suffixed("a"),
-            "él": self.suffixed("a"),
-            "ella": self.suffixed("a"),
-            "nosotros": self.suffixed("amos"),
-            "nosotras": self.suffixed("amos"),
-            "vosotros": self.suffixed("áis"),
-            "vosotras": self.suffixed("áis"),
-            "ustedes": self.suffixed("an"),
-            "ellos": self.suffixed("an"),
-            "ellas": self.suffixed("an"),
-        }
+        return self.personal_conjugation.conjugate(["a", "as", "ás", "a", "amos", "áis", "an"])
 
     def subjunctive_imperfect_preterite(self, alternate_form: bool = False) -> dict:
         if not alternate_form:
-            return {
-            "yo": self.suffixed("iera"),
-            "tú": self.suffixed("ieras"),
-            "vos": self.suffixed("ieras"),
-            "usted": self.suffixed("iera"),
-            "él": self.suffixed("iera"),
-            "ella": self.suffixed("iera"),
-            "nosotros": self.suffixed("iéramos"),
-            "nosotras": self.suffixed("iéramos"),
-            "vosotros": self.suffixed("ierais"),
-            "vosotras": self.suffixed("ierais"),
-            "ustedes": self.suffixed("ieran"),
-            "ellos": self.suffixed("ieran"),
-            "ellas": self.suffixed("ieran"),
-            }
+            return self.personal_conjugation.conjugate(["iera", "ieras", "ieras", "iera", "iéramos", "ierais", "ieran"])
         else:
-            return {
-            "yo": self.suffixed("iese"),
-            "tú": self.suffixed("ieses"),
-            "vos": self.suffixed("ieses"),
-            "usted": self.suffixed("iese"),
-            "él": self.suffixed("iese"),
-            "ella": self.suffixed("iese"),
-            "nosotros": self.suffixed("iésemos"),
-            "nosotras": self.suffixed("iésemos"),
-            "vosotros": self.suffixed("ieseis"),
-            "vosotras": self.suffixed("ieseis"),
-            "ustedes": self.suffixed("iesen"),
-            "ellos": self.suffixed("iesen"),
-            "ellas": self.suffixed("iesen"),
-            }
+            return self.personal_conjugation.conjugate(["iese", "ieses", "ieses", "iese", "iésemos", "ieseis", "iesen"])
 
     def subjunctive_future(self) -> dict:
-        return {
-            "yo": self.suffixed("iere"),
-            "tú": self.suffixed("ieres"),
-            "vos": self.suffixed("ieres"),
-            "usted": self.suffixed("iere"),
-            "él": self.suffixed("iere"),
-            "ella": self.suffixed("iere"),
-            "nosotros": self.suffixed("iéremos"),
-            "nosotras": self.suffixed("iéremos"),
-            "vosotros": self.suffixed("iereis"),
-            "vosotras": self.suffixed("iereis"),
-            "ustedes": self.suffixed("ieren"),
-            "ellos": self.suffixed("ieren"),
-            "ellas": self.suffixed("ieren"),
-        }
+        return self.personal_conjugation.conjugate(["iere", "ieres", "ieres", "iere", "iéremos", "iereis", "ieren"])
 
     def subjunctive_present_perfect(self) -> dict:
         return {
@@ -223,25 +101,7 @@ class RegularSecondGroup:
         }
 
     def imperative_affirmative(self) -> dict:
-        return {
-            "tú": self.suffixed("e"),
-            "vos": self.suffixed("é"),
-            "usted": self.suffixed("a"),
-            "nosotros": self.suffixed("amos"),
-            "nosotras": self.suffixed("amos"),
-            "vosotros": self.suffixed("ed"),
-            "vosotras": self.suffixed("ed"),
-            "ustedes": self.suffixed("an"),
-        }
+        return self.imperative_conjugation.conjugate(["e", "é", "a", "amos", "ed", "an"])
 
     def imperative_negative(self) -> dict:
-        return {
-            "tú": self.suffixed("as"),
-            "vos": self.suffixed("ás"),
-            "usted": self.suffixed("a"),
-            "nosotros": self.suffixed("amos"),
-            "nosotras": self.suffixed("amos"),
-            "vosotros": self.suffixed("áis"),
-            "vosotras": self.suffixed("áis"),
-            "ustedes": self.suffixed("an"),
-        }
+        return self.imperative_conjugation.conjugate(["as", "ás", "a", "amos", "áis", "an"])

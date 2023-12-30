@@ -70,7 +70,7 @@ def test_indicative_future():
         "él": "aprenderá",
         "ella": "aprenderá",
         "nosotros": "aprenderemos",
-        "nosotras": "aprenderéis",
+        "nosotras": "aprenderemos",
         "vosotros": "aprenderéis",
         "vosotras": "aprenderéis",
         "ustedes": "aprenderán",
