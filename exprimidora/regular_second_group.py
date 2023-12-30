@@ -241,7 +241,7 @@ class RegularSecondGroup:
             "usted": self.suffixed("a"),
             "nosotros": self.suffixed("amos"),
             "nosotras": self.suffixed("amos"),
-            "vosotros": self.suffixed("ais"),
-            "vosotras": self.suffixed("ais"),
+            "vosotros": self.suffixed("áis"),
+            "vosotras": self.suffixed("áis"),
             "ustedes": self.suffixed("an"),
         }

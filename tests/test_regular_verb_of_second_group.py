@@ -351,7 +351,7 @@ def test_imperative_negative():
         "usted": "aprenda",
         "nosotros": "aprendamos",
         "nosotras": "aprendamos",
-        "vosotros": "aprendais",
-        "vosotras": "aprendais",
+        "vosotros": "aprendáis",
+        "vosotras": "aprendáis",
         "ustedes": "aprendan",
     }
