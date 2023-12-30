@@ -3,9 +3,9 @@ from exprimidora import IrregularToHave
 class RegularSecondGroup:
     def __init__(self, infinitive: str):
         if len(infinitive) <= 2:
-            raise Exception("Invalid regular verb of the first group as it's length only two characters")
+            raise Exception("Invalid regular verb of the second group as it's length only two characters")
         if not infinitive[-2:] == "er":
-            raise Exception("Invalid regular verb of the first group as it does not terminate in: -er")
+            raise Exception("Invalid regular verb of the second group as it does not terminate in: -er")
         self.infinitive = infinitive
         self.to_have = IrregularToHave()
     
