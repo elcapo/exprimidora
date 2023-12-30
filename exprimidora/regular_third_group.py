@@ -1,4 +1,4 @@
-from exprimidora import IrregularToHave
+from exprimidora.irregular_to_have import IrregularToHave
 from exprimidora.verb import Verb
 
 class RegularThirdGroup(Verb):
@@ -7,8 +7,9 @@ class RegularThirdGroup(Verb):
             raise Exception("Invalid regular verb of the third group as it's length only two characters")
         if not infinitive[-2:] == "ir":
             raise Exception("Invalid regular verb of the third group as it does not terminate in: -ir")
-        self.infinitive = infinitive
+
         self.to_have = IrregularToHave()
+        self.infinitive = infinitive
 
     def gerund(self) -> str:
         return self.suffixed("iendo")

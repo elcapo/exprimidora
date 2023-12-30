@@ -1,7 +1,10 @@
-class IrregularToHave:
+from exprimidora.verb import Verb
+
+class IrregularToHave(Verb):
     def __init__(self):
         self.infinitive = "haber"
-    
+        self.to_have = self
+
     def gerund(self) -> str:
         return "habiendo"
 
@@ -93,36 +96,6 @@ class IrregularToHave:
             "ellas": "habrían",
         }
 
-    def indicative_present_perfect(self) -> dict:
-        return {
-            subject: "{} {}".format(conjugated_have, self.participle())
-                for subject, conjugated_have in self.indicative_present().items()
-        }
-
-    def indicative_past_perfect(self) -> dict:
-        return {
-            subject: "{} {}".format(conjugated_have, self.participle())
-                for subject, conjugated_have in self.indicative_imperfect().items()
-        }
-
-    def indicative_past_anterior(self) -> dict:
-        return {
-            subject: "{} {}".format(conjugated_have, self.participle())
-                for subject, conjugated_have in self.indicative_preterite().items()
-        }
-
-    def indicative_future_perfect(self) -> dict:
-        return {
-            subject: "{} {}".format(conjugated_have, self.participle())
-                for subject, conjugated_have in self.indicative_future().items()
-        }
-
-    def indicative_conditional_perfect(self) -> dict:
-        return {
-            subject: "{} {}".format(conjugated_have, self.participle())
-                for subject, conjugated_have in self.indicative_conditional().items()
-        }
-
     def subjunctive_present(self) -> dict:
         return {
             "yo": "haya",
@@ -189,24 +162,6 @@ class IrregularToHave:
             "ustedes": "hubieren",
             "ellos": "hubieren",
             "ellas": "hubieren",
-        }
-
-    def subjunctive_present_perfect(self) -> dict:
-        return {
-            subject: "{} {}".format(conjugated_have, self.participle())
-                for subject, conjugated_have in self.subjunctive_present().items()
-        }
-
-    def subjunctive_past_perfect(self, alternate_form: bool = False) -> dict:
-        return {
-            subject: "{} {}".format(conjugated_have, self.participle())
-                for subject, conjugated_have in self.subjunctive_imperfect_preterite(alternate_form).items()
-        }
-
-    def subjunctive_future_perfect(self) -> dict:
-        return {
-            subject: "{} {}".format(conjugated_have, self.participle())
-                for subject, conjugated_have in self.subjunctive_future().items()
         }
 
     def imperative_affirmative(self) -> dict:

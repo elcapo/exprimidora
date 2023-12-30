@@ -7,8 +7,9 @@ class RegularSecondGroup(Verb):
             raise Exception("Invalid regular verb of the second group as it's length only two characters")
         if not infinitive[-2:] == "er":
             raise Exception("Invalid regular verb of the second group as it does not terminate in: -er")
-        self.infinitive = infinitive
+        
         self.to_have = IrregularToHave()
+        self.infinitive = infinitive
     
     def gerund(self) -> str:
         return self.suffixed("iendo")
