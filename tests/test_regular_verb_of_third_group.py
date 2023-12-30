@@ -70,7 +70,7 @@ def test_indicative_future():
         "él": "vivirá",
         "ella": "vivirá",
         "nosotros": "viviremos",
-        "nosotras": "viviréis",
+        "nosotras": "viviremos",
         "vosotros": "viviréis",
         "vosotras": "viviréis",
         "ustedes": "vivirán",
