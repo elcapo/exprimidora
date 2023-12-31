@@ -8,6 +8,7 @@ def test_root_participle_and_gerund():
 
 def test_indicative_present():
     verb = RegularFirstGroup("amar")
+    assert verb.indicative_present("yo") == "amo"
     assert verb.indicative_present() == {
         "yo": "amo",
         "tú": "amas",
@@ -26,6 +27,7 @@ def test_indicative_present():
 
 def test_indicative_imperfect():
     verb = RegularFirstGroup("amar")
+    assert verb.indicative_imperfect("yo") == "amaba"
     assert verb.indicative_imperfect() == {
         "yo": "amaba",
         "tú": "amabas",
@@ -44,6 +46,7 @@ def test_indicative_imperfect():
 
 def test_indicative_preterite():
     verb = RegularFirstGroup("amar")
+    assert verb.indicative_preterite("yo") == "amé"
     assert verb.indicative_preterite() == {
         "yo": "amé",
         "tú": "amaste",
@@ -62,6 +65,7 @@ def test_indicative_preterite():
 
 def test_indicative_future():
     verb = RegularFirstGroup("amar")
+    assert verb.indicative_future("yo") == "amaré"
     assert verb.indicative_future() == {
         "yo": "amaré",
         "tú": "amarás",
@@ -80,6 +84,7 @@ def test_indicative_future():
 
 def test_indicative_conditional():
     verb = RegularFirstGroup("amar")
+    assert verb.indicative_conditional("yo") == "amaría"
     assert verb.indicative_conditional() == {
         "yo": "amaría",
         "tú": "amarías",
@@ -98,6 +103,7 @@ def test_indicative_conditional():
 
 def test_indicative_present_perfect():
     verb = RegularFirstGroup("amar")
+    assert verb.indicative_present_perfect("yo") == "he amado"
     assert verb.indicative_present_perfect() == {
         "yo": "he amado",
         "tú": "has amado",
@@ -116,6 +122,7 @@ def test_indicative_present_perfect():
 
 def test_indicative_past_perfect():
     verb = RegularFirstGroup("amar")
+    assert verb.indicative_past_perfect("yo") == "había amado"
     assert verb.indicative_past_perfect() == {
         "yo": "había amado",
         "tú": "habías amado",
@@ -134,6 +141,7 @@ def test_indicative_past_perfect():
 
 def test_indicative_past_anterior():
     verb = RegularFirstGroup("amar")
+    assert verb.indicative_past_anterior("yo") == "hube amado"
     assert verb.indicative_past_anterior() == {
         "yo": "hube amado",
         "tú": "hubiste amado",
@@ -152,6 +160,7 @@ def test_indicative_past_anterior():
 
 def test_indicative_future_perfect():
     verb = RegularFirstGroup("amar")
+    assert verb.indicative_future_perfect("yo") == "habré amado"
     assert verb.indicative_future_perfect() == {
         "yo": "habré amado",
         "tú": "habrás amado",
@@ -170,6 +179,7 @@ def test_indicative_future_perfect():
 
 def test_indicative_conditional_perfect():
     verb = RegularFirstGroup("amar")
+    assert verb.indicative_conditional_perfect("yo") == "habría amado"
     assert verb.indicative_conditional_perfect() == {
         "yo": "habría amado",
         "tú": "habrías amado",
@@ -188,6 +198,7 @@ def test_indicative_conditional_perfect():
 
 def test_subjunctive_present():
     verb = RegularFirstGroup("amar")
+    assert verb.subjunctive_present("yo") == "ame"
     assert verb.subjunctive_present() == {
         "yo": "ame",
         "tú": "ames",
@@ -206,6 +217,7 @@ def test_subjunctive_present():
 
 def test_subjunctive_imperfect_preterite():
     verb = RegularFirstGroup("amar")
+    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = False) == "amara"
     assert verb.subjunctive_imperfect_preterite(alternate_form = False) == {
         "yo": "amara",
         "tú": "amaras",
@@ -224,6 +236,7 @@ def test_subjunctive_imperfect_preterite():
 
 def test_subjunctive_imperfect_preterite_alternate():
     verb = RegularFirstGroup("amar")
+    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = True) == "amase"
     assert verb.subjunctive_imperfect_preterite(alternate_form = True) == {
         "yo": "amase",
         "tú": "amases",
@@ -242,6 +255,7 @@ def test_subjunctive_imperfect_preterite_alternate():
 
 def test_subjunctive_future():
     verb = RegularFirstGroup("amar")
+    assert verb.subjunctive_future("yo") == "amare"
     assert verb.subjunctive_future() == {
         "yo": "amare",
         "tú": "amares",
@@ -260,6 +274,7 @@ def test_subjunctive_future():
 
 def test_subjunctive_present_perfect():
     verb = RegularFirstGroup("amar")
+    assert verb.subjunctive_present_perfect("yo") == "haya amado"
     assert verb.subjunctive_present_perfect() == {
         "yo": "haya amado",
         "tú": "hayas amado",
@@ -278,6 +293,7 @@ def test_subjunctive_present_perfect():
 
 def test_subjunctive_past_perfect():
     verb = RegularFirstGroup("amar")
+    assert verb.subjunctive_past_perfect("yo", alternate_form = False) == "hubiera amado"
     assert verb.subjunctive_past_perfect(alternate_form = False) == {
         "yo": "hubiera amado",
         "tú": "hubieras amado",
@@ -296,6 +312,7 @@ def test_subjunctive_past_perfect():
 
 def test_subjunctive_past_perfect_alternate():
     verb = RegularFirstGroup("amar")
+    assert verb.subjunctive_past_perfect("yo", alternate_form = True) == "hubiese amado"
     assert verb.subjunctive_past_perfect(alternate_form = True) == {
         "yo": "hubiese amado",
         "tú": "hubieses amado",
@@ -314,6 +331,7 @@ def test_subjunctive_past_perfect_alternate():
 
 def test_subjunctive_future_perfect():
     verb = RegularFirstGroup("amar")
+    assert verb.subjunctive_future_perfect("yo") == "hubiere amado"
     assert verb.subjunctive_future_perfect() == {
         "yo": "hubiere amado",
         "tú": "hubieres amado",
@@ -332,6 +350,7 @@ def test_subjunctive_future_perfect():
 
 def test_imperative_affirmative():
     verb = RegularFirstGroup("amar")
+    assert verb.imperative_affirmative("tú") == "ama"
     assert verb.imperative_affirmative() == {
         "tú": "ama",
         "vos": "amá",
@@ -345,6 +364,7 @@ def test_imperative_affirmative():
 
 def test_imperative_negative():
     verb = RegularFirstGroup("amar")
+    assert verb.imperative_negative("tú") == "ames"
     assert verb.imperative_negative() == {
         "tú": "ames",
         "vos": "amés",

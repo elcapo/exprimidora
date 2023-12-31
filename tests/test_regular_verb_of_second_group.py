@@ -8,6 +8,7 @@ def test_root_participle_and_gerund():
 
 def test_indicative_present():
     verb = RegularSecondGroup("aprender")
+    assert verb.indicative_present("yo") == "aprendo"
     assert verb.indicative_present() == {
         "yo": "aprendo",
         "tú": "aprendes",
@@ -26,6 +27,7 @@ def test_indicative_present():
 
 def test_indicative_imperfect():
     verb = RegularSecondGroup("aprender")
+    assert verb.indicative_imperfect("yo") == "aprendía"
     assert verb.indicative_imperfect() == {
         "yo": "aprendía",
         "tú": "aprendías",
@@ -44,6 +46,7 @@ def test_indicative_imperfect():
 
 def test_indicative_preterite():
     verb = RegularSecondGroup("aprender")
+    assert verb.indicative_preterite("yo") == "aprendí"
     assert verb.indicative_preterite() == {
         "yo": "aprendí",
         "tú": "aprendiste",
@@ -62,6 +65,7 @@ def test_indicative_preterite():
 
 def test_indicative_future():
     verb = RegularSecondGroup("aprender")
+    assert verb.indicative_future("yo") == "aprenderé"
     assert verb.indicative_future() == {
         "yo": "aprenderé",
         "tú": "aprenderás",
@@ -80,6 +84,7 @@ def test_indicative_future():
 
 def test_indicative_conditional():
     verb = RegularSecondGroup("aprender")
+    assert verb.indicative_conditional("yo") == "aprendería"
     assert verb.indicative_conditional() == {
         "yo": "aprendería",
         "tú": "aprenderías",
@@ -98,6 +103,7 @@ def test_indicative_conditional():
 
 def test_indicative_present_perfect():
     verb = RegularSecondGroup("aprender")
+    assert verb.indicative_present_perfect("yo") == "he aprendido"
     assert verb.indicative_present_perfect() == {
         "yo": "he aprendido",
         "tú": "has aprendido",
@@ -116,6 +122,7 @@ def test_indicative_present_perfect():
 
 def test_indicative_past_perfect():
     verb = RegularSecondGroup("aprender")
+    assert verb.indicative_past_perfect("yo") == "había aprendido"
     assert verb.indicative_past_perfect() == {
         "yo": "había aprendido",
         "tú": "habías aprendido",
@@ -134,6 +141,7 @@ def test_indicative_past_perfect():
 
 def test_indicative_past_anterior():
     verb = RegularSecondGroup("aprender")
+    assert verb.indicative_past_anterior("yo") == "hube aprendido"
     assert verb.indicative_past_anterior() == {
         "yo": "hube aprendido",
         "tú": "hubiste aprendido",
@@ -152,6 +160,7 @@ def test_indicative_past_anterior():
 
 def test_indicative_future_perfect():
     verb = RegularSecondGroup("aprender")
+    assert verb.indicative_future_perfect("yo") == "habré aprendido"
     assert verb.indicative_future_perfect() == {
         "yo": "habré aprendido",
         "tú": "habrás aprendido",
@@ -170,6 +179,7 @@ def test_indicative_future_perfect():
 
 def test_indicative_conditional_perfect():
     verb = RegularSecondGroup("aprender")
+    assert verb.indicative_conditional_perfect("yo") == "habría aprendido"
     assert verb.indicative_conditional_perfect() == {
         "yo": "habría aprendido",
         "tú": "habrías aprendido",
@@ -188,6 +198,7 @@ def test_indicative_conditional_perfect():
 
 def test_subjunctive_present():
     verb = RegularSecondGroup("aprender")
+    assert verb.subjunctive_present("yo") == "aprenda"
     assert verb.subjunctive_present() == {
         "yo": "aprenda",
         "tú": "aprendas",
@@ -206,6 +217,7 @@ def test_subjunctive_present():
 
 def test_subjunctive_imperfect_preterite():
     verb = RegularSecondGroup("aprender")
+    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = False) == "aprendiera"
     assert verb.subjunctive_imperfect_preterite(alternate_form = False) == {
         "yo": "aprendiera",
         "tú": "aprendieras",
@@ -224,6 +236,7 @@ def test_subjunctive_imperfect_preterite():
 
 def test_subjunctive_imperfect_preterite_alternate():
     verb = RegularSecondGroup("aprender")
+    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = True) == "aprendiese"
     assert verb.subjunctive_imperfect_preterite(alternate_form = True) == {
         "yo": "aprendiese",
         "tú": "aprendieses",
@@ -242,6 +255,7 @@ def test_subjunctive_imperfect_preterite_alternate():
 
 def test_subjunctive_future():
     verb = RegularSecondGroup("aprender")
+    assert verb.subjunctive_future("yo") == "aprendiere"
     assert verb.subjunctive_future() == {
         "yo": "aprendiere",
         "tú": "aprendieres",
@@ -260,6 +274,7 @@ def test_subjunctive_future():
 
 def test_subjunctive_present_perfect():
     verb = RegularSecondGroup("aprender")
+    assert verb.subjunctive_present_perfect("yo") == "haya aprendido"
     assert verb.subjunctive_present_perfect() == {
         "yo": "haya aprendido",
         "tú": "hayas aprendido",
@@ -278,6 +293,7 @@ def test_subjunctive_present_perfect():
 
 def test_subjunctive_past_perfect():
     verb = RegularSecondGroup("aprender")
+    assert verb.subjunctive_past_perfect("yo", alternate_form = False) == "hubiera aprendido"
     assert verb.subjunctive_past_perfect(alternate_form = False) == {
         "yo": "hubiera aprendido",
         "tú": "hubieras aprendido",
@@ -296,6 +312,7 @@ def test_subjunctive_past_perfect():
 
 def test_subjunctive_past_perfect_alternate():
     verb = RegularSecondGroup("aprender")
+    assert verb.subjunctive_past_perfect("yo", alternate_form = True) == "hubiese aprendido"
     assert verb.subjunctive_past_perfect(alternate_form = True) == {
         "yo": "hubiese aprendido",
         "tú": "hubieses aprendido",
@@ -314,6 +331,7 @@ def test_subjunctive_past_perfect_alternate():
 
 def test_subjunctive_future_perfect():
     verb = RegularSecondGroup("aprender")
+    assert verb.subjunctive_future_perfect("yo") == "hubiere aprendido"
     assert verb.subjunctive_future_perfect() == {
         "yo": "hubiere aprendido",
         "tú": "hubieres aprendido",
@@ -332,6 +350,7 @@ def test_subjunctive_future_perfect():
 
 def test_imperative_affirmative():
     verb = RegularSecondGroup("aprender")
+    assert verb.imperative_affirmative("tú") == "aprende"
     assert verb.imperative_affirmative() == {
         "tú": "aprende",
         "vos": "aprendé",
@@ -345,6 +364,7 @@ def test_imperative_affirmative():
 
 def test_imperative_negative():
     verb = RegularSecondGroup("aprender")
+    assert verb.imperative_negative("tú") == "aprendas"
     assert verb.imperative_negative() == {
         "tú": "aprendas",
         "vos": "aprendás",

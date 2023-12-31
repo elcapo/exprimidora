@@ -1,3 +1,5 @@
+from typing import Union
+
 class Verb:
     def __init__(self):
         self.infinitive = None
@@ -8,78 +10,135 @@ class Verb:
     def suffixed(self, suffix: str) -> str:
         return "{}{}".format(self.root(), suffix)
 
-    def personal_conjugation(self, suffixes: list) -> dict:
-        return {
-            "yo": self.suffixed(suffixes[0]),
-            "tú": self.suffixed(suffixes[1]),
-            "vos": self.suffixed(suffixes[2]),
-            "usted": self.suffixed(suffixes[3]),
-            "él": self.suffixed(suffixes[3]),
-            "ella": self.suffixed(suffixes[3]),
-            "nosotros": self.suffixed(suffixes[4]),
-            "nosotras": self.suffixed(suffixes[4]),
-            "vosotros": self.suffixed(suffixes[5]),
-            "vosotras": self.suffixed(suffixes[5]),
-            "ustedes": self.suffixed(suffixes[6]),
-            "ellos": self.suffixed(suffixes[6]),
-            "ellas": self.suffixed(suffixes[6]),
+    def personal_conjugation(self, suffixes: list, person: str = None) -> Union[dict, str]:
+        suffix_to_person = {
+            "yo": 0,
+            "tú": 1,
+            "vos": 2,
+            "usted": 3,
+            "él": 3,
+            "ella": 3,
+            "nosotros": 4,
+            "nosotras": 4,
+            "vosotros": 5,
+            "vosotras": 5,
+            "ustedes": 6,
+            "ellos": 6,
+            "ellas": 6,
         }
 
-    def imperative_conjugation(self, suffixes: list) -> dict:
+        if person:
+            return self.suffixed(suffixes[suffix_to_person[person]])
+
         return {
-            "tú": self.suffixed(suffixes[0]),
-            "vos": self.suffixed(suffixes[1]),
-            "usted": self.suffixed(suffixes[2]),
-            "nosotros": self.suffixed(suffixes[3]),
-            "nosotras": self.suffixed(suffixes[3]),
-            "vosotros": self.suffixed(suffixes[4]),
-            "vosotras": self.suffixed(suffixes[4]),
-            "ustedes": self.suffixed(suffixes[5]),
+            "yo": self.suffixed(suffixes[suffix_to_person["yo"]]),
+            "tú": self.suffixed(suffixes[suffix_to_person["tú"]]),
+            "vos": self.suffixed(suffixes[suffix_to_person["vos"]]),
+            "usted": self.suffixed(suffixes[suffix_to_person["usted"]]),
+            "él": self.suffixed(suffixes[suffix_to_person["él"]]),
+            "ella": self.suffixed(suffixes[suffix_to_person["ella"]]),
+            "nosotros": self.suffixed(suffixes[suffix_to_person["nosotros"]]),
+            "nosotras": self.suffixed(suffixes[suffix_to_person["nosotras"]]),
+            "vosotros": self.suffixed(suffixes[suffix_to_person["vosotros"]]),
+            "vosotras": self.suffixed(suffixes[suffix_to_person["vosotras"]]),
+            "ustedes": self.suffixed(suffixes[suffix_to_person["ustedes"]]),
+            "ellos": self.suffixed(suffixes[suffix_to_person["ellos"]]),
+            "ellas": self.suffixed(suffixes[suffix_to_person["ellas"]]),
         }
 
-    def indicative_present_perfect(self) -> dict:
+    def imperative_conjugation(self, suffixes: list, person: str = None) -> Union[dict, str]:
+        suffix_to_person = {
+            "tú": 0,
+            "vos": 1,
+            "usted": 2,
+            "nosotros": 3,
+            "nosotras": 3,
+            "vosotros": 4,
+            "vosotras": 4,
+            "ustedes": 5,
+        }
+
+        if person:
+            return self.suffixed(suffixes[suffix_to_person[person]])
+
+        return {
+            "tú": self.suffixed(suffixes[suffix_to_person["tú"]]),
+            "vos": self.suffixed(suffixes[suffix_to_person["vos"]]),
+            "usted": self.suffixed(suffixes[suffix_to_person["usted"]]),
+            "nosotros": self.suffixed(suffixes[suffix_to_person["nosotros"]]),
+            "nosotras": self.suffixed(suffixes[suffix_to_person["nosotras"]]),
+            "vosotros": self.suffixed(suffixes[suffix_to_person["vosotros"]]),
+            "vosotras": self.suffixed(suffixes[suffix_to_person["vosotras"]]),
+            "ustedes": self.suffixed(suffixes[suffix_to_person["ustedes"]]),
+        }
+
+    def indicative_present_perfect(self, person: str = None) -> Union[dict, str]:
+        if person:
+            return "{} {}".format(self.to_have.indicative_present(person), self.participle())
+
         return {
             subject: "{} {}".format(conjugated_have, self.participle())
                 for subject, conjugated_have in self.to_have.indicative_present().items()
         }
 
-    def indicative_past_perfect(self) -> dict:
+    def indicative_past_perfect(self, person: str = None) -> Union[dict, str]:
+        if person:
+            return "{} {}".format(self.to_have.indicative_imperfect(person), self.participle())
+
         return {
             subject: "{} {}".format(conjugated_have, self.participle())
                 for subject, conjugated_have in self.to_have.indicative_imperfect().items()
         }
 
-    def indicative_past_anterior(self) -> dict:
+    def indicative_past_anterior(self, person: str = None) -> Union[dict, str]:
+        if person:
+            return "{} {}".format(self.to_have.indicative_preterite(person), self.participle())
+
         return {
             subject: "{} {}".format(conjugated_have, self.participle())
                 for subject, conjugated_have in self.to_have.indicative_preterite().items()
         }
 
-    def indicative_future_perfect(self) -> dict:
+    def indicative_future_perfect(self, person: str = None) -> Union[dict, str]:
+        if person:
+            return "{} {}".format(self.to_have.indicative_future(person), self.participle())
+
         return {
             subject: "{} {}".format(conjugated_have, self.participle())
                 for subject, conjugated_have in self.to_have.indicative_future().items()
         }
 
-    def indicative_conditional_perfect(self) -> dict:
+    def indicative_conditional_perfect(self, person: str = None) -> Union[dict, str]:
+        if person:
+            return "{} {}".format(self.to_have.indicative_conditional(person), self.participle())
+
         return {
             subject: "{} {}".format(conjugated_have, self.participle())
                 for subject, conjugated_have in self.to_have.indicative_conditional().items()
         }
 
-    def subjunctive_present_perfect(self) -> dict:
+    def subjunctive_present_perfect(self, person: str = None) -> Union[dict, str]:
+        if person:
+            return "{} {}".format(self.to_have.subjunctive_present(person), self.participle())
+
         return {
             subject: "{} {}".format(conjugated_have, self.participle())
                 for subject, conjugated_have in self.to_have.subjunctive_present().items()
         }
 
-    def subjunctive_past_perfect(self, alternate_form: bool = False) -> dict:
+    def subjunctive_past_perfect(self, person: str = None, alternate_form: bool = False) -> Union[dict, str]:
+        if person:
+            return "{} {}".format(self.to_have.subjunctive_imperfect_preterite(person, alternate_form), self.participle())
+
         return {
             subject: "{} {}".format(conjugated_have, self.participle())
-                for subject, conjugated_have in self.to_have.subjunctive_imperfect_preterite(alternate_form).items()
+                for subject, conjugated_have in self.to_have.subjunctive_imperfect_preterite(alternate_form = alternate_form).items()
         }
 
-    def subjunctive_future_perfect(self) -> dict:
+    def subjunctive_future_perfect(self, person: str = None) -> Union[dict, str]:
+        if person:
+            return "{} {}".format(self.to_have.subjunctive_future(person), self.participle())
+
         return {
             subject: "{} {}".format(conjugated_have, self.participle())
                 for subject, conjugated_have in self.to_have.subjunctive_future().items()

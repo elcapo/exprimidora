@@ -8,6 +8,7 @@ def test_root_participle_and_gerund():
 
 def test_indicative_present():
     verb = RegularThirdGroup("vivir")
+    assert verb.indicative_present("yo") == "vivo"
     assert verb.indicative_present() == {
         "yo": "vivo",
         "tú": "vives",
@@ -26,6 +27,7 @@ def test_indicative_present():
 
 def test_indicative_imperfect():
     verb = RegularThirdGroup("vivir")
+    assert verb.indicative_imperfect("yo") == "vivía"
     assert verb.indicative_imperfect() == {
         "yo": "vivía",
         "tú": "vivías",
@@ -44,6 +46,7 @@ def test_indicative_imperfect():
 
 def test_indicative_preterite():
     verb = RegularThirdGroup("vivir")
+    assert verb.indicative_preterite("yo") == "viví"
     assert verb.indicative_preterite() == {
         "yo": "viví",
         "tú": "viviste",
@@ -62,6 +65,7 @@ def test_indicative_preterite():
 
 def test_indicative_future():
     verb = RegularThirdGroup("vivir")
+    assert verb.indicative_future("yo") == "viviré"
     assert verb.indicative_future() == {
         "yo": "viviré",
         "tú": "vivirás",
@@ -80,6 +84,7 @@ def test_indicative_future():
 
 def test_indicative_conditional():
     verb = RegularThirdGroup("vivir")
+    assert verb.indicative_conditional("yo") == "viviría"
     assert verb.indicative_conditional() == {
         "yo": "viviría",
         "tú": "vivirías",
@@ -98,6 +103,7 @@ def test_indicative_conditional():
 
 def test_indicative_present_perfect():
     verb = RegularThirdGroup("vivir")
+    assert verb.indicative_present_perfect("yo") == "he vivido"
     assert verb.indicative_present_perfect() == {
         "yo": "he vivido",
         "tú": "has vivido",
@@ -116,6 +122,7 @@ def test_indicative_present_perfect():
 
 def test_indicative_past_perfect():
     verb = RegularThirdGroup("vivir")
+    assert verb.indicative_past_perfect("yo") == "había vivido"
     assert verb.indicative_past_perfect() == {
         "yo": "había vivido",
         "tú": "habías vivido",
@@ -134,6 +141,7 @@ def test_indicative_past_perfect():
 
 def test_indicative_past_anterior():
     verb = RegularThirdGroup("vivir")
+    assert verb.indicative_past_anterior("yo") == "hube vivido"
     assert verb.indicative_past_anterior() == {
         "yo": "hube vivido",
         "tú": "hubiste vivido",
@@ -152,6 +160,7 @@ def test_indicative_past_anterior():
 
 def test_indicative_future_perfect():
     verb = RegularThirdGroup("vivir")
+    assert verb.indicative_future_perfect("yo") == "habré vivido"
     assert verb.indicative_future_perfect() == {
         "yo": "habré vivido",
         "tú": "habrás vivido",
@@ -170,6 +179,7 @@ def test_indicative_future_perfect():
 
 def test_indicative_conditional_perfect():
     verb = RegularThirdGroup("vivir")
+    assert verb.indicative_conditional_perfect("yo") == "habría vivido"
     assert verb.indicative_conditional_perfect() == {
         "yo": "habría vivido",
         "tú": "habrías vivido",
@@ -188,6 +198,7 @@ def test_indicative_conditional_perfect():
 
 def test_subjunctive_present():
     verb = RegularThirdGroup("vivir")
+    assert verb.subjunctive_present("yo") == "viva"
     assert verb.subjunctive_present() == {
         "yo": "viva",
         "tú": "vivas",
@@ -206,6 +217,7 @@ def test_subjunctive_present():
 
 def test_subjunctive_imperfect_preterite():
     verb = RegularThirdGroup("vivir")
+    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = False) == "viviera"
     assert verb.subjunctive_imperfect_preterite(alternate_form = False) == {
         "yo": "viviera",
         "tú": "vivieras",
@@ -224,6 +236,7 @@ def test_subjunctive_imperfect_preterite():
 
 def test_subjunctive_imperfect_preterite_alternate():
     verb = RegularThirdGroup("vivir")
+    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = True) == "viviese"
     assert verb.subjunctive_imperfect_preterite(alternate_form = True) == {
         "yo": "viviese",
         "tú": "vivieses",
@@ -242,6 +255,7 @@ def test_subjunctive_imperfect_preterite_alternate():
 
 def test_subjunctive_future():
     verb = RegularThirdGroup("vivir")
+    assert verb.subjunctive_future("yo") == "viviere"
     assert verb.subjunctive_future() == {
         "yo": "viviere",
         "tú": "vivieres",
@@ -260,6 +274,7 @@ def test_subjunctive_future():
 
 def test_subjunctive_present_perfect():
     verb = RegularThirdGroup("vivir")
+    assert verb.subjunctive_present_perfect("yo") == "haya vivido"
     assert verb.subjunctive_present_perfect() == {
         "yo": "haya vivido",
         "tú": "hayas vivido",
@@ -278,6 +293,7 @@ def test_subjunctive_present_perfect():
 
 def test_subjunctive_past_perfect():
     verb = RegularThirdGroup("vivir")
+    assert verb.subjunctive_past_perfect("yo", alternate_form = False) == "hubiera vivido"
     assert verb.subjunctive_past_perfect(alternate_form = False) == {
         "yo": "hubiera vivido",
         "tú": "hubieras vivido",
@@ -296,6 +312,7 @@ def test_subjunctive_past_perfect():
 
 def test_subjunctive_past_perfect_alternate():
     verb = RegularThirdGroup("vivir")
+    assert verb.subjunctive_past_perfect("yo", alternate_form = True) == "hubiese vivido"
     assert verb.subjunctive_past_perfect(alternate_form = True) == {
         "yo": "hubiese vivido",
         "tú": "hubieses vivido",
@@ -314,6 +331,7 @@ def test_subjunctive_past_perfect_alternate():
 
 def test_subjunctive_future_perfect():
     verb = RegularThirdGroup("vivir")
+    assert verb.subjunctive_future_perfect("yo") == "hubiere vivido"
     assert verb.subjunctive_future_perfect() == {
         "yo": "hubiere vivido",
         "tú": "hubieres vivido",
@@ -332,6 +350,7 @@ def test_subjunctive_future_perfect():
 
 def test_imperative_affirmative():
     verb = RegularThirdGroup("vivir")
+    assert verb.imperative_affirmative("tú") == "vive"
     assert verb.imperative_affirmative() == {
         "tú": "vive",
         "vos": "viví",
@@ -345,6 +364,7 @@ def test_imperative_affirmative():
 
 def test_imperative_negative():
     verb = RegularThirdGroup("vivir")
+    assert verb.imperative_negative("tú") == "vivas"
     assert verb.imperative_negative() == {
         "tú": "vivas",
         "vos": "vivás",

@@ -1,5 +1,6 @@
 from exprimidora.irregular_to_have import IrregularToHave
 from exprimidora.verb import Verb
+from typing import Union
 
 class IrregularToBe(Verb):
     def __init__(self):
@@ -12,8 +13,8 @@ class IrregularToBe(Verb):
     def participle(self) -> str:
         return "sido"
 
-    def indicative_present(self) -> dict:
-        return {
+    def indicative_present(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
             "yo": "soy",
             "tú": "eres",
             "vos": "sos",
@@ -29,8 +30,13 @@ class IrregularToBe(Verb):
             "ellas": "son",
         }
 
-    def indicative_imperfect(self) -> dict:
-        return {
+        if person:
+            return conjugation[person]
+        
+        return conjugation
+
+    def indicative_imperfect(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
             "yo": "era",
             "tú": "eras",
             "vos": "eras",
@@ -46,8 +52,13 @@ class IrregularToBe(Verb):
             "ellas": "eran",
         }
 
-    def indicative_preterite(self) -> dict:
-        return {
+        if person:
+            return conjugation[person]
+        
+        return conjugation
+
+    def indicative_preterite(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
             "yo": "fui",
             "tú": "fuiste",
             "vos": "fuiste",
@@ -63,8 +74,13 @@ class IrregularToBe(Verb):
             "ellas": "fueron",
         }
 
-    def indicative_future(self) -> dict:
-        return {
+        if person:
+            return conjugation[person]
+        
+        return conjugation
+
+    def indicative_future(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
             "yo": "seré",
             "tú": "serás",
             "vos": "serás",
@@ -80,8 +96,13 @@ class IrregularToBe(Verb):
             "ellas": "serán",
         }
 
-    def indicative_conditional(self) -> dict:
-        return {
+        if person:
+            return conjugation[person]
+        
+        return conjugation
+
+    def indicative_conditional(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
             "yo": "sería",
             "tú": "serías",
             "vos": "serías",
@@ -97,8 +118,13 @@ class IrregularToBe(Verb):
             "ellas": "serían",
         }
 
-    def subjunctive_present(self) -> dict:
-        return {
+        if person:
+            return conjugation[person]
+        
+        return conjugation
+
+    def subjunctive_present(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
             "yo": "sea",
             "tú": "seas",
             "vos": "seas",
@@ -114,9 +140,14 @@ class IrregularToBe(Verb):
             "ellas": "sean",
         }
 
-    def subjunctive_imperfect_preterite(self, alternate_form: bool = False) -> dict:
+        if person:
+            return conjugation[person]
+        
+        return conjugation
+
+    def subjunctive_imperfect_preterite(self, person: str = None, alternate_form: bool = False) -> Union[dict, str]:
         if not alternate_form:
-            return {
+            conjugation = {
                 "yo": "fuera",
                 "tú": "fueras",
                 "vos": "fueras",
@@ -132,7 +163,7 @@ class IrregularToBe(Verb):
                 "ellas": "fueran",
             }
         else:
-            return {
+            conjugation = {
                 "yo": "fuese",
                 "tú": "fueses",
                 "vos": "fueses",
@@ -148,8 +179,13 @@ class IrregularToBe(Verb):
                 "ellas": "fuesen",
             }
 
-    def subjunctive_future(self) -> dict:
-        return {
+        if person:
+            return conjugation[person]
+        
+        return conjugation
+
+    def subjunctive_future(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
             "yo": "fuere",
             "tú": "fueres",
             "vos": "fueres",
@@ -165,8 +201,13 @@ class IrregularToBe(Verb):
             "ellas": "fueren",
         }
 
-    def imperative_affirmative(self) -> dict:
-        return {
+        if person:
+            return conjugation[person]
+        
+        return conjugation
+
+    def imperative_affirmative(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
             "tú": "sé",
             "vos": "sé",
             "usted": "sea",
@@ -177,8 +218,13 @@ class IrregularToBe(Verb):
             "ustedes": "sean",
         }
 
-    def imperative_negative(self) -> dict:
-        return {
+        if person:
+            return conjugation[person]
+        
+        return conjugation
+
+    def imperative_negative(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
             "tú": "seas",
             "vos": "seás",
             "usted": "sea",
@@ -188,3 +234,8 @@ class IrregularToBe(Verb):
             "vosotras": "seáis",
             "ustedes": "sean",
         }
+
+        if person:
+            return conjugation[person]
+        
+        return conjugation

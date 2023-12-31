@@ -7,6 +7,7 @@ def test_participle_and_gerund():
 
 def test_indicative_present():
     verb = IrregularToHave()
+    assert verb.indicative_present("yo") == "he"
     assert verb.indicative_present() == {
         "yo": "he",
         "tú": "has",
@@ -25,6 +26,7 @@ def test_indicative_present():
 
 def test_indicative_imperfect():
     verb = IrregularToHave()
+    assert verb.indicative_imperfect("yo") == "había"
     assert verb.indicative_imperfect() == {
         "yo": "había",
         "tú": "habías",
@@ -43,6 +45,7 @@ def test_indicative_imperfect():
 
 def test_indicative_preterite():
     verb = IrregularToHave()
+    assert verb.indicative_preterite("yo") == "hube"
     assert verb.indicative_preterite() == {
         "yo": "hube",
         "tú": "hubiste",
@@ -61,6 +64,7 @@ def test_indicative_preterite():
 
 def test_indicative_future():
     verb = IrregularToHave()
+    assert verb.indicative_future("yo") == "habré"
     assert verb.indicative_future() == {
         "yo": "habré",
         "tú": "habrás",
@@ -79,6 +83,7 @@ def test_indicative_future():
 
 def test_indicative_conditional():
     verb = IrregularToHave()
+    assert verb.indicative_conditional("yo") == "habría"
     assert verb.indicative_conditional() == {
         "yo": "habría",
         "tú": "habrías",
@@ -97,6 +102,7 @@ def test_indicative_conditional():
 
 def test_indicative_present_perfect():
     verb = IrregularToHave()
+    assert verb.indicative_present_perfect("yo") == "he habido"
     assert verb.indicative_present_perfect() == {
         "yo": "he habido",
         "tú": "has habido",
@@ -115,6 +121,7 @@ def test_indicative_present_perfect():
 
 def test_indicative_past_perfect():
     verb = IrregularToHave()
+    assert verb.indicative_past_perfect("yo") == "había habido"
     assert verb.indicative_past_perfect() == {
         "yo": "había habido",
         "tú": "habías habido",
@@ -133,6 +140,7 @@ def test_indicative_past_perfect():
 
 def test_indicative_past_anterior():
     verb = IrregularToHave()
+    assert verb.indicative_past_anterior("yo") == "hube habido"
     assert verb.indicative_past_anterior() == {
         "yo": "hube habido",
         "tú": "hubiste habido",
@@ -151,6 +159,7 @@ def test_indicative_past_anterior():
 
 def test_indicative_future_perfect():
     verb = IrregularToHave()
+    assert verb.indicative_future_perfect("yo") == "habré habido"
     assert verb.indicative_future_perfect() == {
         "yo": "habré habido",
         "tú": "habrás habido",
@@ -169,6 +178,7 @@ def test_indicative_future_perfect():
 
 def test_indicative_conditional_perfect():
     verb = IrregularToHave()
+    assert verb.indicative_conditional_perfect("yo") == "habría habido"
     assert verb.indicative_conditional_perfect() == {
         "yo": "habría habido",
         "tú": "habrías habido",
@@ -187,6 +197,7 @@ def test_indicative_conditional_perfect():
 
 def test_subjunctive_present():
     verb = IrregularToHave()
+    assert verb.subjunctive_present("yo") == "haya"
     assert verb.subjunctive_present() == {
         "yo": "haya",
         "tú": "hayas",
@@ -205,6 +216,7 @@ def test_subjunctive_present():
 
 def test_subjunctive_imperfect_preterite():
     verb = IrregularToHave()
+    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = False) == "hubiera"
     assert verb.subjunctive_imperfect_preterite(alternate_form = False) == {
         "yo": "hubiera",
         "tú": "hubieras",
@@ -223,6 +235,7 @@ def test_subjunctive_imperfect_preterite():
 
 def test_subjunctive_imperfect_preterite_alternate():
     verb = IrregularToHave()
+    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = True) == "hubiese"
     assert verb.subjunctive_imperfect_preterite(alternate_form = True) == {
         "yo": "hubiese",
         "tú": "hubieses",
@@ -241,6 +254,7 @@ def test_subjunctive_imperfect_preterite_alternate():
 
 def test_subjunctive_future():
     verb = IrregularToHave()
+    assert verb.subjunctive_future("yo") == "hubiere"
     assert verb.subjunctive_future() == {
         "yo": "hubiere",
         "tú": "hubieres",
@@ -259,6 +273,7 @@ def test_subjunctive_future():
 
 def test_subjunctive_present_perfect():
     verb = IrregularToHave()
+    assert verb.subjunctive_present_perfect("yo") == "haya habido"
     assert verb.subjunctive_present_perfect() == {
         "yo": "haya habido",
         "tú": "hayas habido",
@@ -277,6 +292,7 @@ def test_subjunctive_present_perfect():
 
 def test_subjunctive_past_perfect():
     verb = IrregularToHave()
+    assert verb.subjunctive_past_perfect("yo", alternate_form = False) == "hubiera habido"
     assert verb.subjunctive_past_perfect(alternate_form = False) == {
         "yo": "hubiera habido",
         "tú": "hubieras habido",
@@ -295,6 +311,7 @@ def test_subjunctive_past_perfect():
 
 def test_subjunctive_past_perfect_alternate():
     verb = IrregularToHave()
+    assert verb.subjunctive_past_perfect("yo", alternate_form = True) == "hubiese habido"
     assert verb.subjunctive_past_perfect(alternate_form = True) == {
         "yo": "hubiese habido",
         "tú": "hubieses habido",
@@ -313,6 +330,7 @@ def test_subjunctive_past_perfect_alternate():
 
 def test_subjunctive_future_perfect():
     verb = IrregularToHave()
+    assert verb.subjunctive_future_perfect("yo") == "hubiere habido"
     assert verb.subjunctive_future_perfect() == {
         "yo": "hubiere habido",
         "tú": "hubieres habido",
@@ -331,6 +349,7 @@ def test_subjunctive_future_perfect():
 
 def test_imperative_affirmative():
     verb = IrregularToHave()
+    assert verb.imperative_affirmative("tú") == "he"
     assert verb.imperative_affirmative() == {
         "tú": "he",
         "vos": "he",
@@ -344,6 +363,7 @@ def test_imperative_affirmative():
 
 def test_imperative_negative():
     verb = IrregularToHave()
+    assert verb.imperative_negative("tú") == "hayas"
     assert verb.imperative_negative() == {
         "tú": "hayas",
         "vos": "hayás",
