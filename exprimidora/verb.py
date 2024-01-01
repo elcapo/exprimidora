@@ -115,7 +115,11 @@ class Verb:
         forms = set()
         for tense in self.all_form_names(only_simple):
             conjugator = getattr(self, tense)
-            forms = forms.union(set(conjugator().values()))
+            conjugation = conjugator()
+            if type(conjugation) == str:
+                forms = forms.union({conjugation})
+            elif type(conjugation) == dict:
+                forms = forms.union(set(conjugation.values()))
         forms = list(forms)
         forms.sort()
         return forms

@@ -102,6 +102,36 @@ The following verb tenses can be conjugated:
 - **imperative_affirmative** (*imperativo afirmativo*): estudia
 - **imperative_negative** (*imperativo negativo*): *no* estudies
 
+## All Forms
+
+The `all_forms_flattened` method can be used to obtain all the forms of a verb as a list.
+
+### Example: All Simple Forms
+
+This line:
+
+```python
+verb.all_forms_flattened(only_simple = True)
+```
+
+... would generate this:
+
+```json
+[
+    "exprima", "exprimamos", "expriman", "exprimas", "exprime",
+    "exprimen", "exprimes", "exprimid", "exprimido", "exprimiendo",
+    "exprimiera", "exprimierais", "exprimieran", "exprimieras",
+    "exprimiere", "exprimiereis", "exprimieren", "exprimieres",
+    "exprimieron", "exprimimos", "exprimiremos", "exprimirá",
+    "exprimirán", "exprimirás", "exprimiré", "exprimiréis",
+    "exprimiría", "exprimiríais", "exprimiríamos", "exprimirían",
+    "exprimirías", "exprimiste", "exprimisteis", "exprimiéramos",
+    "exprimiéremos", "exprimió", "exprimo", "exprimáis",
+    "exprimás", "exprimí", "exprimía", "exprimíais",
+    "exprimíamos", "exprimían", "exprimías", "exprimís",
+]
+```
+
 ## Limitations
 
 These are current limitations of the current version:
@@ -146,3 +176,5 @@ poetry shell
 # ... and run the examples above
 python
 ```
+
+> [!NOTE]: The former warning means that this won't be published as a `pip` package until a version is considered to be sufficiently developed.
