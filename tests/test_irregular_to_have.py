@@ -216,8 +216,8 @@ def test_subjunctive_present():
 
 def test_subjunctive_imperfect_preterite():
     verb = IrregularToHave()
-    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = False) == "hubiera"
-    assert verb.subjunctive_imperfect_preterite(alternate_form = False) == {
+    assert verb.subjunctive_imperfect_preterite("yo") == "hubiera"
+    assert verb.subjunctive_imperfect_preterite() == {
         "yo": "hubiera",
         "tú": "hubieras",
         "vos": "hubieras",
@@ -235,8 +235,8 @@ def test_subjunctive_imperfect_preterite():
 
 def test_subjunctive_imperfect_preterite_alternate():
     verb = IrregularToHave()
-    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = True) == "hubiese"
-    assert verb.subjunctive_imperfect_preterite(alternate_form = True) == {
+    assert verb.subjunctive_imperfect_preterite_alternate("yo") == "hubiese"
+    assert verb.subjunctive_imperfect_preterite_alternate() == {
         "yo": "hubiese",
         "tú": "hubieses",
         "vos": "hubieses",
@@ -292,8 +292,8 @@ def test_subjunctive_present_perfect():
 
 def test_subjunctive_past_perfect():
     verb = IrregularToHave()
-    assert verb.subjunctive_past_perfect("yo", alternate_form = False) == "hubiera habido"
-    assert verb.subjunctive_past_perfect(alternate_form = False) == {
+    assert verb.subjunctive_past_perfect("yo") == "hubiera habido"
+    assert verb.subjunctive_past_perfect() == {
         "yo": "hubiera habido",
         "tú": "hubieras habido",
         "vos": "hubieras habido",
@@ -311,8 +311,8 @@ def test_subjunctive_past_perfect():
 
 def test_subjunctive_past_perfect_alternate():
     verb = IrregularToHave()
-    assert verb.subjunctive_past_perfect("yo", alternate_form = True) == "hubiese habido"
-    assert verb.subjunctive_past_perfect(alternate_form = True) == {
+    assert verb.subjunctive_past_perfect_alternate("yo") == "hubiese habido"
+    assert verb.subjunctive_past_perfect_alternate() == {
         "yo": "hubiese habido",
         "tú": "hubieses habido",
         "vos": "hubieses habido",

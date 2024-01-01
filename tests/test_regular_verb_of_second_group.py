@@ -217,8 +217,8 @@ def test_subjunctive_present():
 
 def test_subjunctive_imperfect_preterite():
     verb = RegularSecondGroup("aprender")
-    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = False) == "aprendiera"
-    assert verb.subjunctive_imperfect_preterite(alternate_form = False) == {
+    assert verb.subjunctive_imperfect_preterite("yo") == "aprendiera"
+    assert verb.subjunctive_imperfect_preterite() == {
         "yo": "aprendiera",
         "tú": "aprendieras",
         "vos": "aprendieras",
@@ -236,8 +236,8 @@ def test_subjunctive_imperfect_preterite():
 
 def test_subjunctive_imperfect_preterite_alternate():
     verb = RegularSecondGroup("aprender")
-    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = True) == "aprendiese"
-    assert verb.subjunctive_imperfect_preterite(alternate_form = True) == {
+    assert verb.subjunctive_imperfect_preterite_alternate("yo") == "aprendiese"
+    assert verb.subjunctive_imperfect_preterite_alternate() == {
         "yo": "aprendiese",
         "tú": "aprendieses",
         "vos": "aprendieses",
@@ -293,8 +293,8 @@ def test_subjunctive_present_perfect():
 
 def test_subjunctive_past_perfect():
     verb = RegularSecondGroup("aprender")
-    assert verb.subjunctive_past_perfect("yo", alternate_form = False) == "hubiera aprendido"
-    assert verb.subjunctive_past_perfect(alternate_form = False) == {
+    assert verb.subjunctive_past_perfect("yo") == "hubiera aprendido"
+    assert verb.subjunctive_past_perfect() == {
         "yo": "hubiera aprendido",
         "tú": "hubieras aprendido",
         "vos": "hubieras aprendido",
@@ -312,8 +312,8 @@ def test_subjunctive_past_perfect():
 
 def test_subjunctive_past_perfect_alternate():
     verb = RegularSecondGroup("aprender")
-    assert verb.subjunctive_past_perfect("yo", alternate_form = True) == "hubiese aprendido"
-    assert verb.subjunctive_past_perfect(alternate_form = True) == {
+    assert verb.subjunctive_past_perfect_alternate("yo") == "hubiese aprendido"
+    assert verb.subjunctive_past_perfect_alternate() == {
         "yo": "hubiese aprendido",
         "tú": "hubieses aprendido",
         "vos": "hubieses aprendido",

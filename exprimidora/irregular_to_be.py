@@ -145,39 +145,44 @@ class IrregularToBe(Verb):
         
         return conjugation
 
-    def subjunctive_imperfect_preterite(self, person: str = None, alternate_form: bool = False) -> Union[dict, str]:
-        if not alternate_form:
-            conjugation = {
-                "yo": "fuera",
-                "tú": "fueras",
-                "vos": "fueras",
-                "usted": "fuera",
-                "él": "fuera",
-                "ella": "fuera",
-                "nosotros": "fuéramos",
-                "nosotras": "fuéramos",
-                "vosotros": "fuerais",
-                "vosotras": "fuerais",
-                "ustedes": "fueran",
-                "ellos": "fueran",
-                "ellas": "fueran",
-            }
-        else:
-            conjugation = {
-                "yo": "fuese",
-                "tú": "fueses",
-                "vos": "fueses",
-                "usted": "fuese",
-                "él": "fuese",
-                "ella": "fuese",
-                "nosotros": "fuésemos",
-                "nosotras": "fuésemos",
-                "vosotros": "fueseis",
-                "vosotras": "fueseis",
-                "ustedes": "fuesen",
-                "ellos": "fuesen",
-                "ellas": "fuesen",
-            }
+    def subjunctive_imperfect_preterite(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
+            "yo": "fuera",
+            "tú": "fueras",
+            "vos": "fueras",
+            "usted": "fuera",
+            "él": "fuera",
+            "ella": "fuera",
+            "nosotros": "fuéramos",
+            "nosotras": "fuéramos",
+            "vosotros": "fuerais",
+            "vosotras": "fuerais",
+            "ustedes": "fueran",
+            "ellos": "fueran",
+            "ellas": "fueran",
+        }
+
+        if person:
+            return conjugation[person]
+        
+        return conjugation
+
+    def subjunctive_imperfect_preterite_alternate(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
+            "yo": "fuese",
+            "tú": "fueses",
+            "vos": "fueses",
+            "usted": "fuese",
+            "él": "fuese",
+            "ella": "fuese",
+            "nosotros": "fuésemos",
+            "nosotras": "fuésemos",
+            "vosotros": "fueseis",
+            "vosotras": "fueseis",
+            "ustedes": "fuesen",
+            "ellos": "fuesen",
+            "ellas": "fuesen",
+        }
 
         if person:
             return conjugation[person]

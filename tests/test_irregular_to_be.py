@@ -216,8 +216,8 @@ def test_subjunctive_present():
 
 def test_subjunctive_imperfect_preterite():
     verb = IrregularToBe()
-    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = False) == "fuera"
-    assert verb.subjunctive_imperfect_preterite(alternate_form = False) == {
+    assert verb.subjunctive_imperfect_preterite("yo") == "fuera"
+    assert verb.subjunctive_imperfect_preterite() == {
         "yo": "fuera",
         "tú": "fueras",
         "vos": "fueras",
@@ -235,8 +235,8 @@ def test_subjunctive_imperfect_preterite():
 
 def test_subjunctive_imperfect_preterite_alternate():
     verb = IrregularToBe()
-    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = True) == "fuese"
-    assert verb.subjunctive_imperfect_preterite(alternate_form = True) == {
+    assert verb.subjunctive_imperfect_preterite_alternate("yo") == "fuese"
+    assert verb.subjunctive_imperfect_preterite_alternate() == {
         "yo": "fuese",
         "tú": "fueses",
         "vos": "fueses",
@@ -292,8 +292,8 @@ def test_subjunctive_present_perfect():
 
 def test_subjunctive_past_perfect():
     verb = IrregularToBe()
-    assert verb.subjunctive_past_perfect("yo", alternate_form = False) == "hubiera sido"
-    assert verb.subjunctive_past_perfect(alternate_form = False) == {
+    assert verb.subjunctive_past_perfect("yo") == "hubiera sido"
+    assert verb.subjunctive_past_perfect() == {
         "yo": "hubiera sido",
         "tú": "hubieras sido",
         "vos": "hubieras sido",
@@ -311,8 +311,8 @@ def test_subjunctive_past_perfect():
 
 def test_subjunctive_past_perfect_alternate():
     verb = IrregularToBe()
-    assert verb.subjunctive_past_perfect("yo", alternate_form = True) == "hubiese sido"
-    assert verb.subjunctive_past_perfect(alternate_form = True) == {
+    assert verb.subjunctive_past_perfect_alternate("yo") == "hubiese sido"
+    assert verb.subjunctive_past_perfect_alternate() == {
         "yo": "hubiese sido",
         "tú": "hubieses sido",
         "vos": "hubieses sido",

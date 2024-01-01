@@ -19,34 +19,34 @@ class RegularFirstGroup(Verb):
         return self.suffixed("ado")
 
     def indicative_present(self, person: str = None) -> Union[dict, str]:
-        return self.personal_conjugation(["o", "as", "ás", "a", "amos", "áis", "an"], person)
+        return self.conjugate_personal(["o", "as", "ás", "a", "amos", "áis", "an"], person)
 
     def indicative_imperfect(self, person: str = None) -> Union[dict, str]:
-        return self.personal_conjugation(["aba", "abas", "abas", "aba", "ábamos", "abais", "aban"], person)
+        return self.conjugate_personal(["aba", "abas", "abas", "aba", "ábamos", "abais", "aban"], person)
 
     def indicative_preterite(self, person: str = None) -> Union[dict, str]:
-        return self.personal_conjugation(["é", "aste", "aste", "ó", "amos", "asteis", "aron"], person)
+        return self.conjugate_personal(["é", "aste", "aste", "ó", "amos", "asteis", "aron"], person)
 
     def indicative_future(self, person: str = None) -> Union[dict, str]:
-        return self.personal_conjugation(["aré", "arás", "arás", "ará", "aremos", "aréis", "arán"], person)
+        return self.conjugate_personal(["aré", "arás", "arás", "ará", "aremos", "aréis", "arán"], person)
 
     def indicative_conditional(self, person: str = None) -> Union[dict, str]:
-        return self.personal_conjugation(["aría", "arías", "arías", "aría", "aríamos", "aríais", "arían"], person)
+        return self.conjugate_personal(["aría", "arías", "arías", "aría", "aríamos", "aríais", "arían"], person)
 
     def subjunctive_present(self, person: str = None) -> Union[dict, str]:
-        return self.personal_conjugation(["e", "es", "és", "e", "emos", "éis", "en"], person)
+        return self.conjugate_personal(["e", "es", "és", "e", "emos", "éis", "en"], person)
 
-    def subjunctive_imperfect_preterite(self, person: str = None, alternate_form: bool = False) -> Union[dict, str]:
-        if not alternate_form:
-            return self.personal_conjugation(["ara", "aras", "aras", "ara", "áramos", "arais", "aran"], person)
-        else:
-            return self.personal_conjugation(["ase", "ases", "ases", "ase", "ásemos", "aseis", "asen"], person)
+    def subjunctive_imperfect_preterite(self, person: str = None) -> Union[dict, str]:
+        return self.conjugate_personal(["ara", "aras", "aras", "ara", "áramos", "arais", "aran"], person)
+
+    def subjunctive_imperfect_preterite_alternate(self, person: str = None) -> Union[dict, str]:
+        return self.conjugate_personal(["ase", "ases", "ases", "ase", "ásemos", "aseis", "asen"], person)
 
     def subjunctive_future(self, person: str = None) -> Union[dict, str]:
-        return self.personal_conjugation(["are", "ares", "ares", "are", "áremos", "areis", "aren"], person)
+        return self.conjugate_personal(["are", "ares", "ares", "are", "áremos", "areis", "aren"], person)
 
     def imperative_affirmative(self, person: str = None) -> Union[dict, str]:
-        return self.imperative_conjugation(["a", "á", "e", "emos", "ad", "en"], person)
+        return self.conjugate_imperative(["a", "á", "e", "emos", "ad", "en"], person)
 
     def imperative_negative(self, person: str = None) -> Union[dict, str]:
-        return self.imperative_conjugation(["es", "és", "e", "emos", "éis", "en"], person)
+        return self.conjugate_imperative(["es", "és", "e", "emos", "éis", "en"], person)

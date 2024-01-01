@@ -217,8 +217,8 @@ def test_subjunctive_present():
 
 def test_subjunctive_imperfect_preterite():
     verb = RegularFirstGroup("amar")
-    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = False) == "amara"
-    assert verb.subjunctive_imperfect_preterite(alternate_form = False) == {
+    assert verb.subjunctive_imperfect_preterite("yo") == "amara"
+    assert verb.subjunctive_imperfect_preterite() == {
         "yo": "amara",
         "tú": "amaras",
         "vos": "amaras",
@@ -236,8 +236,8 @@ def test_subjunctive_imperfect_preterite():
 
 def test_subjunctive_imperfect_preterite_alternate():
     verb = RegularFirstGroup("amar")
-    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = True) == "amase"
-    assert verb.subjunctive_imperfect_preterite(alternate_form = True) == {
+    assert verb.subjunctive_imperfect_preterite_alternate("yo") == "amase"
+    assert verb.subjunctive_imperfect_preterite_alternate() == {
         "yo": "amase",
         "tú": "amases",
         "vos": "amases",
@@ -293,8 +293,8 @@ def test_subjunctive_present_perfect():
 
 def test_subjunctive_past_perfect():
     verb = RegularFirstGroup("amar")
-    assert verb.subjunctive_past_perfect("yo", alternate_form = False) == "hubiera amado"
-    assert verb.subjunctive_past_perfect(alternate_form = False) == {
+    assert verb.subjunctive_past_perfect("yo") == "hubiera amado"
+    assert verb.subjunctive_past_perfect() == {
         "yo": "hubiera amado",
         "tú": "hubieras amado",
         "vos": "hubieras amado",
@@ -312,8 +312,8 @@ def test_subjunctive_past_perfect():
 
 def test_subjunctive_past_perfect_alternate():
     verb = RegularFirstGroup("amar")
-    assert verb.subjunctive_past_perfect("yo", alternate_form = True) == "hubiese amado"
-    assert verb.subjunctive_past_perfect(alternate_form = True) == {
+    assert verb.subjunctive_past_perfect_alternate("yo") == "hubiese amado"
+    assert verb.subjunctive_past_perfect_alternate() == {
         "yo": "hubiese amado",
         "tú": "hubieses amado",
         "vos": "hubieses amado",

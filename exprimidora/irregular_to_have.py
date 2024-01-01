@@ -144,39 +144,44 @@ class IrregularToHave(Verb):
         
         return conjugation
 
-    def subjunctive_imperfect_preterite(self, person: str = None, alternate_form: bool = False) -> Union[dict, str]:
-        if not alternate_form:
-            conjugation = {
-                "yo": "hubiera",
-                "tú": "hubieras",
-                "vos": "hubieras",
-                "usted": "hubiera",
-                "él": "hubiera",
-                "ella": "hubiera",
-                "nosotros": "hubiéramos",
-                "nosotras": "hubiéramos",
-                "vosotros": "hubierais",
-                "vosotras": "hubierais",
-                "ustedes": "hubieran",
-                "ellos": "hubieran",
-                "ellas": "hubieran",
-            }
-        else:
-            conjugation = {
-                "yo": "hubiese",
-                "tú": "hubieses",
-                "vos": "hubieses",
-                "usted": "hubiese",
-                "él": "hubiese",
-                "ella": "hubiese",
-                "nosotros": "hubiésemos",
-                "nosotras": "hubiésemos",
-                "vosotros": "hubieseis",
-                "vosotras": "hubieseis",
-                "ustedes": "hubiesen",
-                "ellos": "hubiesen",
-                "ellas": "hubiesen",
-            }
+    def subjunctive_imperfect_preterite(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
+            "yo": "hubiera",
+            "tú": "hubieras",
+            "vos": "hubieras",
+            "usted": "hubiera",
+            "él": "hubiera",
+            "ella": "hubiera",
+            "nosotros": "hubiéramos",
+            "nosotras": "hubiéramos",
+            "vosotros": "hubierais",
+            "vosotras": "hubierais",
+            "ustedes": "hubieran",
+            "ellos": "hubieran",
+            "ellas": "hubieran",
+        }
+
+        if person:
+            return conjugation[person]
+        
+        return conjugation
+
+    def subjunctive_imperfect_preterite_alternate(self, person: str = None) -> Union[dict, str]:
+        conjugation = {
+            "yo": "hubiese",
+            "tú": "hubieses",
+            "vos": "hubieses",
+            "usted": "hubiese",
+            "él": "hubiese",
+            "ella": "hubiese",
+            "nosotros": "hubiésemos",
+            "nosotras": "hubiésemos",
+            "vosotros": "hubieseis",
+            "vosotras": "hubieseis",
+            "ustedes": "hubiesen",
+            "ellos": "hubiesen",
+            "ellas": "hubiesen",
+        }
 
         if person:
             return conjugation[person]

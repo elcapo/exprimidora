@@ -87,12 +87,14 @@ The following verb tenses can be conjugated:
 
 - **subjunctive_present** (*presente*): estudie
 - **subjunctive_imperfect_preterite** (*pretérito imperfecto*): estudiara
+- **subjunctive_imperfect_preterite_alternative** (*pretérito imperfecto*): estudiase
 - **subjunctive_future** (*futuro*): estudiare
 
 #### Compound
 
 - **subjunctive_present_perfect** (*pretérito perfecto*): haya estudiado
-- **subjunctive_past_perfect** (*pretérito pluscuamperfecto*): hubiese estudiado
+- **subjunctive_past_perfect** (*pretérito pluscuamperfecto*): hubiera estudiado
+- **subjunctive_past_perfect_alternative** (*pretérito pluscuamperfecto*): hubiese estudiado
 - **subjunctive_future_perfect** (*futuro*): hubiere estudiado
 
 ### Imperative

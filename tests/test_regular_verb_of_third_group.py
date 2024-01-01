@@ -217,8 +217,8 @@ def test_subjunctive_present():
 
 def test_subjunctive_imperfect_preterite():
     verb = RegularThirdGroup("vivir")
-    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = False) == "viviera"
-    assert verb.subjunctive_imperfect_preterite(alternate_form = False) == {
+    assert verb.subjunctive_imperfect_preterite("yo") == "viviera"
+    assert verb.subjunctive_imperfect_preterite() == {
         "yo": "viviera",
         "tú": "vivieras",
         "vos": "vivieras",
@@ -236,8 +236,8 @@ def test_subjunctive_imperfect_preterite():
 
 def test_subjunctive_imperfect_preterite_alternate():
     verb = RegularThirdGroup("vivir")
-    assert verb.subjunctive_imperfect_preterite("yo", alternate_form = True) == "viviese"
-    assert verb.subjunctive_imperfect_preterite(alternate_form = True) == {
+    assert verb.subjunctive_imperfect_preterite_alternate("yo") == "viviese"
+    assert verb.subjunctive_imperfect_preterite_alternate() == {
         "yo": "viviese",
         "tú": "vivieses",
         "vos": "vivieses",
@@ -293,8 +293,8 @@ def test_subjunctive_present_perfect():
 
 def test_subjunctive_past_perfect():
     verb = RegularThirdGroup("vivir")
-    assert verb.subjunctive_past_perfect("yo", alternate_form = False) == "hubiera vivido"
-    assert verb.subjunctive_past_perfect(alternate_form = False) == {
+    assert verb.subjunctive_past_perfect("yo") == "hubiera vivido"
+    assert verb.subjunctive_past_perfect() == {
         "yo": "hubiera vivido",
         "tú": "hubieras vivido",
         "vos": "hubieras vivido",
@@ -312,8 +312,8 @@ def test_subjunctive_past_perfect():
 
 def test_subjunctive_past_perfect_alternate():
     verb = RegularThirdGroup("vivir")
-    assert verb.subjunctive_past_perfect("yo", alternate_form = True) == "hubiese vivido"
-    assert verb.subjunctive_past_perfect(alternate_form = True) == {
+    assert verb.subjunctive_past_perfect_alternate("yo") == "hubiese vivido"
+    assert verb.subjunctive_past_perfect_alternate() == {
         "yo": "hubiese vivido",
         "tú": "hubieses vivido",
         "vos": "hubieses vivido",
