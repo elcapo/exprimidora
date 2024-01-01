@@ -177,4 +177,5 @@ poetry shell
 python
 ```
 
-> [!NOTE]: The former warning means that this won't be published as a `pip` package until a version is considered to be sufficiently developed.
+> [!NOTE]
+> The former warning means that this won't be published as a `pip` package until a version is considered to be sufficiently developed.
