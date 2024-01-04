@@ -10,3 +10,5 @@ from exprimidora.regular_verb import RegularVerb
 from exprimidora.regular_first_group import RegularFirstGroup
 from exprimidora.regular_second_group import RegularSecondGroup
 from exprimidora.regular_third_group import RegularThirdGroup
+
+from exprimidora.conjugator import conjugator
