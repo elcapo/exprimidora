@@ -1,5 +1,5 @@
 from typing import Union
-from exprimidora.irregular_to_have import IrregularToHave
+from exprimidora import IrregularToHave
 from exprimidora import Verb
 
 class RegularVerb(Verb):

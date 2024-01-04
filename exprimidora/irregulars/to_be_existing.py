@@ -1,8 +1,8 @@
-from exprimidora.irregular_to_have import IrregularToHave
+from exprimidora.irregulars.to_have import IrregularToHave
 from exprimidora.verb import Verb
 from typing import Union
 
-class IrregularToBe(Verb):
+class IrregularToBeExisting(Verb):
     def __init__(self):
         self.to_have = IrregularToHave()
         self.infinitive = "ser"

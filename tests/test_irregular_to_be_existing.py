@@ -1,12 +1,12 @@
-from exprimidora import IrregularToBe
+from exprimidora import IrregularToBeExisting
 
 def test_participle_and_gerund():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.gerund() == "siendo"
     assert verb.participle() == "sido"
 
 def test_indicative_present():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.indicative_present("yo") == "soy"
     assert verb.indicative_present() == {
         "yo": "soy",
@@ -25,7 +25,7 @@ def test_indicative_present():
     }
 
 def test_indicative_imperfect():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.indicative_imperfect("yo") == "era"
     assert verb.indicative_imperfect() == {
         "yo": "era",
@@ -44,7 +44,7 @@ def test_indicative_imperfect():
     }
 
 def test_indicative_preterite():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.indicative_preterite("yo") == "fui"
     assert verb.indicative_preterite() == {
         "yo": "fui",
@@ -63,7 +63,7 @@ def test_indicative_preterite():
     }
 
 def test_indicative_future():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.indicative_future("yo") == "seré"
     assert verb.indicative_future() == {
         "yo": "seré",
@@ -82,7 +82,7 @@ def test_indicative_future():
     }
 
 def test_indicative_conditional():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.indicative_conditional("yo") == "sería"
     assert verb.indicative_conditional() == {
         "yo": "sería",
@@ -101,7 +101,7 @@ def test_indicative_conditional():
     }
 
 def test_indicative_present_perfect():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.indicative_present_perfect("yo") == "he sido"
     assert verb.indicative_present_perfect() == {
         "yo": "he sido",
@@ -120,7 +120,7 @@ def test_indicative_present_perfect():
     }
 
 def test_indicative_past_perfect():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.indicative_past_perfect("yo") == "había sido"
     assert verb.indicative_past_perfect() == {
         "yo": "había sido",
@@ -139,7 +139,7 @@ def test_indicative_past_perfect():
     }
 
 def test_indicative_past_anterior():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.indicative_past_anterior("yo") == "hube sido"
     assert verb.indicative_past_anterior() == {
         "yo": "hube sido",
@@ -158,7 +158,7 @@ def test_indicative_past_anterior():
     }
 
 def test_indicative_future_perfect():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.indicative_future_perfect("yo") == "habré sido"
     assert verb.indicative_future_perfect() == {
         "yo": "habré sido",
@@ -177,7 +177,7 @@ def test_indicative_future_perfect():
     }
 
 def test_indicative_conditional_perfect():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.indicative_conditional_perfect("yo") == "habría sido"
     assert verb.indicative_conditional_perfect() == {
         "yo": "habría sido",
@@ -196,7 +196,7 @@ def test_indicative_conditional_perfect():
     }
 
 def test_subjunctive_present():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.subjunctive_present("yo") == "sea"
     assert verb.subjunctive_present() == {
         "yo": "sea",
@@ -215,7 +215,7 @@ def test_subjunctive_present():
     }
 
 def test_subjunctive_imperfect_preterite():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.subjunctive_imperfect_preterite("yo") == "fuera"
     assert verb.subjunctive_imperfect_preterite() == {
         "yo": "fuera",
@@ -234,7 +234,7 @@ def test_subjunctive_imperfect_preterite():
     }
 
 def test_subjunctive_imperfect_preterite_alternate():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.subjunctive_imperfect_preterite_alternate("yo") == "fuese"
     assert verb.subjunctive_imperfect_preterite_alternate() == {
         "yo": "fuese",
@@ -253,7 +253,7 @@ def test_subjunctive_imperfect_preterite_alternate():
     }
 
 def test_subjunctive_future():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.subjunctive_future("yo") == "fuere"
     assert verb.subjunctive_future() == {
         "yo": "fuere",
@@ -272,7 +272,7 @@ def test_subjunctive_future():
     }
 
 def test_subjunctive_present_perfect():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.subjunctive_present_perfect("yo") == "haya sido"
     assert verb.subjunctive_present_perfect() == {
         "yo": "haya sido",
@@ -291,7 +291,7 @@ def test_subjunctive_present_perfect():
     }
 
 def test_subjunctive_past_perfect():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.subjunctive_past_perfect("yo") == "hubiera sido"
     assert verb.subjunctive_past_perfect() == {
         "yo": "hubiera sido",
@@ -310,7 +310,7 @@ def test_subjunctive_past_perfect():
     }
 
 def test_subjunctive_past_perfect_alternate():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.subjunctive_past_perfect_alternate("yo") == "hubiese sido"
     assert verb.subjunctive_past_perfect_alternate() == {
         "yo": "hubiese sido",
@@ -329,7 +329,7 @@ def test_subjunctive_past_perfect_alternate():
     }
 
 def test_subjunctive_future_perfect():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.subjunctive_future_perfect("yo") == "hubiere sido"
     assert verb.subjunctive_future_perfect() == {
         "yo": "hubiere sido",
@@ -348,7 +348,7 @@ def test_subjunctive_future_perfect():
     }
 
 def test_imperative_affirmative():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.imperative_affirmative("tú") == "sé"
     assert verb.imperative_affirmative() == {
         "tú": "sé",
@@ -362,7 +362,7 @@ def test_imperative_affirmative():
     }
 
 def test_imperative_negative():
-    verb = IrregularToBe()
+    verb = IrregularToBeExisting()
     assert verb.imperative_negative("tú") == "seas"
     assert verb.imperative_negative() == {
         "tú": "seas",

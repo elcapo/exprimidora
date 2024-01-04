@@ -1,8 +1,9 @@
 from exprimidora.base_verb import BaseVerb
 from exprimidora.verb import Verb
 
-from exprimidora.irregular_to_be import IrregularToBe
-from exprimidora.irregular_to_have import IrregularToHave
+from exprimidora.irregulars.to_have import IrregularToHave
+from exprimidora.irregulars.to_be_existing import IrregularToBeExisting
+from exprimidora.irregulars.to_be_standing import IrregularToBeStanding
 
 from exprimidora.regular_verb import RegularVerb
 
