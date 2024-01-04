@@ -1,16 +1,14 @@
-from exprimidora.irregular_to_have import IrregularToHave
-from exprimidora.verb import Verb
+from exprimidora.regular_verb import RegularVerb
 from typing import Union
 
-class RegularSecondGroup(Verb):
+class RegularSecondGroup(RegularVerb):
     def __init__(self, infinitive: str):
         if len(infinitive) <= 2:
             raise Exception("Invalid regular verb of the second group as it's length only two characters")
         if not infinitive[-2:] == "er":
             raise Exception("Invalid regular verb of the second group as it does not terminate in: -er")
         
-        self.to_have = IrregularToHave()
-        self.infinitive = infinitive
+        super().__init__(infinitive)
     
     def gerund(self) -> str:
         return self.suffixed("iendo")

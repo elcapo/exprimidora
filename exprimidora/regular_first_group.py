@@ -1,16 +1,14 @@
-from exprimidora.irregular_to_have import IrregularToHave
-from exprimidora.verb import Verb
+from exprimidora.regular_verb import RegularVerb
 from typing import Union
 
-class RegularFirstGroup(Verb):
+class RegularFirstGroup(RegularVerb):
     def __init__(self, infinitive: str):
         if len(infinitive) <= 2:
             raise Exception("Invalid regular verb of the first group as it's length only two characters")
         if not infinitive[-2:] == "ar":
             raise Exception("Invalid regular verb of the first group as it does not terminate in: -ar")
-
-        self.to_have = IrregularToHave()
-        self.infinitive = infinitive
+        
+        super().__init__(infinitive)
    
     def gerund(self) -> str:
         return self.suffixed("ando")
