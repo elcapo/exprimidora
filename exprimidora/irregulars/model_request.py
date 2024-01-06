@@ -13,9 +13,12 @@ class ModelRequest(Verb):
         self.to_have = IrregularToHave()
         self.infinitive = infinitive
 
-    def root(self, last_letter: str = "e") -> str:
+    def root(self, vowel: str = "e") -> str:
         except_last_syllable = "".join(self.syllables()[:-1])
-        return except_last_syllable[:-1] + last_letter
+        if except_last_syllable[-1] == "e":
+            return except_last_syllable[:-1] + vowel
+        if except_last_syllable[-2] == "e":
+            return except_last_syllable[:-2] + vowel + except_last_syllable[-1:]
 
     def finish(self, suffix: str) -> str:
         last_syllable = self.syllables()[-1]
