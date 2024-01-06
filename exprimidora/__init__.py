@@ -4,6 +4,7 @@ from exprimidora.verb import Verb
 from exprimidora.irregulars.to_have import IrregularToHave
 from exprimidora.irregulars.to_be_existing import IrregularToBeExisting
 from exprimidora.irregulars.to_be_standing import IrregularToBeStanding
+from exprimidora.irregulars.model_request import ModelRequest
 
 from exprimidora.regular_verb import RegularVerb
 
